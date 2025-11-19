@@ -15,38 +15,38 @@ cd build
 ## Available Benchmarks
 
 ### BSP Algorithm Benchmarks
-- `BM_BSP_SmallSpace` - 100x100 space with 4 partitions
-- `BM_BSP_MediumSpace` - 500x500 space with 16 partitions
-- `BM_BSP_LargeSpace` - 1000x1000 space with 32 partitions
-- `BM_BSP_VeryLargeSpace` - 2000x2000 space with 64 partitions
-- `BM_BSP_VaryingPartitions` - Test different partition counts (4-128)
-- `BM_BSP_VaryingMinSize` - Test different minimum sizes (5-100)
+- `BSP_SmallSpace` - 100x100 space with 4 partitions
+- `BSP_MediumSpace` - 500x500 space with 16 partitions
+- `BSP_LargeSpace` - 1000x1000 space with 32 partitions
+- `BSP_VeryLargeSpace` - 2000x2000 space with 64 partitions
+- `BSP_VaryingPartitions` - Test different partition counts (4-128)
+- `BSP_VaryingMinSize` - Test different minimum sizes (5-100)
 
 ### Configuration Benchmarks
-- `BM_BSP_GeometricCenters` - BSP with geometric centers
-- `BM_BSP_RandomCenters` - BSP with random centers
+- `BSP_GeometricCenters` - BSP with geometric centers
+- `BSP_RandomCenters` - BSP with random centers
 
 ### Component Benchmarks
-- `BM_BSP_NodeCreation` - Node creation performance
-- `BM_BSP_NodeSplitting` - Single node split performance
-- `BM_BSP_GetLeafNodes` - Leaf node retrieval
-- `BM_BSP_GetRandomLeafNodes` - Random leaf selection (1-32 nodes)
-- `BM_BSP_RectangleArea` - Area calculation
-- `BM_BSP_RectangleCenter` - Center retrieval
-- `BM_BSP_NodeCanSplit` - canSplit check
-- `BM_BSP_TreeNodeCount` - Node counting
+- `BSP_NodeCreation` - Node creation performance
+- `BSP_NodeSplitting` - Single node split performance
+- `BSP_GetLeafNodes` - Leaf node retrieval
+- `BSP_GetRandomLeafNodes` - Random leaf selection (1-32 nodes)
+- `BSP_RectangleArea` - Area calculation
+- `BSP_RectangleCenter` - Center retrieval
+- `BSP_NodeCanSplit` - canSplit check
+- `BSP_TreeNodeCount` - Node counting
 
 ### Shape Benchmarks
-- `BM_BSP_NonSquareSpace` - Non-square rectangular spaces
-- `BM_BSP_ExtremeAspectRatio` - Extreme aspect ratios (5000x100)
+- `BSP_NonSquareSpace` - Non-square rectangular spaces
+- `BSP_ExtremeAspectRatio` - Extreme aspect ratios (5000x100)
 
 ## Sample Results
 
 Simple component benchmarks (successful):
 ```
-BM_BSP_RectangleArea        0.155 ns
-BM_BSP_RectangleCenter      0.313 ns
-BM_BSP_NodeCanSplit         0.623 ns
+BSP_RectangleArea        0.155 ns
+BSP_RectangleCenter      0.313 ns
+BSP_NodeCanSplit         0.623 ns
 ```
 
 ## Known Issues
