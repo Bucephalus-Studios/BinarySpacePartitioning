@@ -129,13 +129,17 @@ BSP_Tree runBSP(
 
 ### stevensMathLib Dependency
 
-The library uses `stevensMathLib::randomInt` for random number generation. A complete implementation is provided in `stevensMathLib.hpp`. This implementation includes:
+The library depends on [stevensMathLib](https://github.com/Bucephalus-Studios/stevensMathLib) for random number generation. A copy is included in `stevensMathLib.hpp` for convenience.
 
-- Thread-safe random number generation using `thread_local` storage
-- Mersenne Twister (mt19937) for high-quality randomness
-- Proper edge case handling (when min >= max, returns min)
+Key features of the dependency:
+- **Thread-safe random number generation** using `thread_local` storage
+- **Mersenne Twister (mt19937)** for high-quality randomness
+- **High-resolution clock seeding** to avoid entropy exhaustion
+- **Critical edge case handling**: When `min >= max`, `randomInt()` returns `min`
 
-**Important:** The edge case handling in `randomInt` is critical. When rectangle dimensions are exactly `minimumSplitSize * 2`, the split calculation can produce `randomInt(min, min)`, which must return `min` rather than failing or causing undefined behavior.
+**Important:** The edge case handling in `randomInt` is critical for BSP splitting. When rectangle dimensions are exactly `minimumSplitSize * 2`, the split calculation produces `randomInt(min, min)`, which must return `min` rather than causing undefined behavior that would lead to segmentation faults.
+
+To update stevensMathLib, copy the latest `stevensMathLib.h` from the [upstream repository](https://github.com/Bucephalus-Studios/stevensMathLib).
 
 ### Algorithm Overview
 
