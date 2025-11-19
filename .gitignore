@@ -1,0 +1,30 @@
+# Build directories
+tests/build/
+benchmarks/build/
+
+# CMake generated files
+**/CMakeCache.txt
+**/CMakeFiles/
+**/cmake_install.cmake
+**/Makefile
+
+# Compiled object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+bsp_tests
+bsp_benchmarks
+
+# Libraries
+*.a
+*.lib
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
