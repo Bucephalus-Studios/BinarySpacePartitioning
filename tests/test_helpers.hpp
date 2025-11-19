@@ -1,6 +1,7 @@
 #pragma once
 #include <random>
 #include <algorithm>
+#include <chrono>
 
 /**
  * @brief Mock implementation of stevensMathLib for testing purposes
@@ -18,8 +19,16 @@ namespace stevensMathLib
      */
     inline int randomInt(int min, int max)
     {
-        static std::random_device rd;
-        static std::mt19937 gen(rd());
+        // Handle edge case where min >= max
+        if (min >= max) {
+            return min;
+        }
+        // Use thread_local to avoid static initialization issues
+        thread_local std::mt19937 gen(
+            static_cast<unsigned int>(
+                std::chrono::steady_clock::now().time_since_epoch().count()
+            )
+        );
         std::uniform_int_distribution<> dis(min, max - 1);
         return dis(gen);
     }

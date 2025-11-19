@@ -8,7 +8,8 @@
 static void BSP_SmallSpace(benchmark::State& state) {
     for (auto _ : state) {
         auto tree = BinarySpacePartitioning::runBSP(100, 100, 10, 4);
-        benchmark::DoNotOptimize(tree);
+        auto leafCount = tree.getLeafNodes().size();
+        benchmark::DoNotOptimize(leafCount);
     }
 }
 BENCHMARK(BSP_SmallSpace);

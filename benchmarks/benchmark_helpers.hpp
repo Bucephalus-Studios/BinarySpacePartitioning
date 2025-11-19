@@ -9,6 +9,13 @@
  */
 namespace stevensMathLib
 {
+    // Simple global random number generator
+    // Using a fixed seed for reproducible benchmarks
+    inline std::mt19937& getGenerator() {
+        static std::mt19937 gen(42);
+        return gen;
+    }
+
     /**
      * @brief Generates a random integer between min (inclusive) and max (exclusive)
      *
@@ -18,9 +25,11 @@ namespace stevensMathLib
      */
     inline int randomInt(int min, int max)
     {
-        static std::random_device rd;
-        static std::mt19937 gen(rd());
+        // Handle edge case where min >= max
+        if (min >= max) {
+            return min;
+        }
         std::uniform_int_distribution<> dis(min, max - 1);
-        return dis(gen);
+        return dis(getGenerator());
     }
 }
