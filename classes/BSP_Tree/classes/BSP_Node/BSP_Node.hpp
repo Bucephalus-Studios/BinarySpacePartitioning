@@ -1,6 +1,6 @@
 #include "classes/BSP_Rectangle.hpp"
 #include "classes/BSP_SplitDirection.hpp"
-#include "../../../../stevensMathLib.hpp"
+#include <stevensMathLib.h>
 #include <memory>
 #include <tuple>
 #include <cmath>

@@ -1,6 +1,6 @@
 #include "classes/BSP_Tree/BSP_Tree.hpp"
 #include "BSP_Settings.hpp"
-#include "stevensMathLib.hpp"
+#include <stevensMathLib.h>
 
 #pragma once
 
@@ -31,7 +31,7 @@ namespace BinarySpacePartitioning
      * 
      * @return A BSP_Tree object representing the partitioned space.
      */
-    BSP_Tree runBSP(    int width,
+    inline BSP_Tree runBSP(    int width,
                         int height,
                         int minimumSplitSize,
                         int requiredPartitions,
